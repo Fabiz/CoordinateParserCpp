@@ -85,4 +85,4 @@ This software is licensed under the Apache 2 license:
 http://www.apache.org/licenses/LICENSE-2.0
 
 ### Credit
-Originally developed for javascript by [otto-dev](https://github.com/otto-dev).
+Originally developed for javascript by [otto-dev](https://github.com/otto-dev) and [WEPROG](http://www.weprog.com/).
