@@ -97,13 +97,9 @@ class CoordinateParser {
     public:
 
         CoordinateNumber(const std::vector<std::string> &coordinateNumbers) {
-            if (coordinateNumbers.size() < 1) {
-                throw std::runtime_error("coordinate number is too small");
-            }
+            _sign = coordinateNumbers.size() > 0 ? normalizedSignOf(std::stod(coordinateNumbers[0])) : 1;
 
-            _sign = normalizedSignOf(std::stod(coordinateNumbers[0]));
-
-            _degrees = std::abs(std::stod(coordinateNumbers[0]));
+            _degrees = coordinateNumbers.size() > 0 ? std::abs(std::stod(coordinateNumbers[0])) : 0;
             _minutes = coordinateNumbers.size() > 1 ? std::abs(std::stod(coordinateNumbers[1])) : 0;
             _seconds = coordinateNumbers.size() > 2 ? std::abs(std::stod(coordinateNumbers[2])) : 0;
             _milliseconds = coordinateNumbers.size() > 3 ? std::abs(std::stod(coordinateNumbers[3])) : 0;
