@@ -17,7 +17,7 @@ std::string str = "40.4183318° N 74.6411133° W"
 bool valid = CoordinateParser::parse(str, latitude, longitude, error);
 
 if (valid)
-    std::cout << str << ": " << latitude <<  ", " << longitude << std::endl;   // 40.123, -74.123 ✓
+    std::cout << str << ": " << latitude <<  ", " << longitude << std::endl;   // 40.41833, -74.64111 ✓
 else
     std::cout << str << ": parsing failed, " << error << std::endl;
 
