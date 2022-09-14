@@ -66,8 +66,6 @@ Flexibility towards non-alphanumeric characters and whitespaces is maintained.
 std::string error;
 double latitude, longitude = 0;
 
-std::string str = "40.4183318° N 74.6411133° W"
-
 bool valid = CoordinateParser::parse("40:7:22.8N 74:7:22.8W", latitude, longitude, error); // true
 bool valid = CoordinateParser::parse("40.123 FOOBAR! 74.123", latitude, longitude, error); // false
 
