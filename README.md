@@ -17,9 +17,9 @@ std::string str = "40.4183318° N 74.6411133° W"
 bool valid = CoordinateParser::parse(str, latitude, longitude, error);
 
 if (valid)
-	std::cout << str << ": " << latitude <<  ",  " << longitude << std::endl;   // 40.123, -74.123 ✓
+    std::cout << str << ": " << latitude <<  ",  " << longitude << std::endl;   // 40.123, -74.123 ✓
 else
-	std::cout << str << ": parsing failed, " << error << std::endl;
+    std::cout << str << ": parsing failed, " << error << std::endl;
 
 ```
 
@@ -62,22 +62,15 @@ The parser will detect invalid formats such as `40.123N FOOBAR 74.123W` (invalid
 
 Flexibility towards non-alphanumeric characters and whitespaces is maintained.
 
-```js
-isValidPosition = function(position) {
-  var error;
-  var isValid;
-  try {
-    isValid = true;
-    new Coordinates(position);
-    return isValid;
-  } catch (error) {
-    isValid = false;
-    return isValid;
-  }
-};
+```cpp
+std::string error;
+double latitude, longitude = 0;
 
-isCoordinate = isValidPosition('40:7:22.8N 74:7:22.8W'); // true
-isCoordinate = isValidPosition('40.123 FOOBAR! 74.123'); // false
+std::string str = "40.4183318° N 74.6411133° W"
+
+bool valid = CoordinateParser::parse("40:7:22.8N 74:7:22.8W", latitude, longitude, error); // true
+bool valid = CoordinateParser::parse("40.123 FOOBAR! 74.123'", latitude, longitude, error); // false
+
 ```
 
 ### Licence
